@@ -3,7 +3,7 @@ import pg from 'pg';
 
 const { Pool } = pg;
 const pool = new Pool({ connectionTimeoutMillis: 3000, max: 5 });
-const version = 'v1';
+const version = 'v2';
 let initialized = false;
 pool.on('error', (error) => console.error('DB pool:', error.message));
 
