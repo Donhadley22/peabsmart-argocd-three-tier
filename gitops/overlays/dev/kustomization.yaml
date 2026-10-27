@@ -10,4 +10,4 @@ images:
     newTag: v1
 replicas:
   - name: backend
-    count: 1
+    count: 2
