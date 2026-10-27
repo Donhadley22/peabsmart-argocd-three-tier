@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: peabsmart-lab
+  namespace: argocd
+spec:
+  description: Peabsmart Academy three tier GitOps training
+  sourceRepos:
+    - https://github.com/Donhadley22/peabsmart-argocd-three-tier.git
+  destinations:
+    - namespace: lab-dev
+      server: https://kubernetes.default.svc
+    - namespace: lab-staging
+      server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+    - group: ""
+      kind: Service
+    - group: ""
+      kind: ConfigMap
+    - group: apps
+      kind: Deployment
+    - group: apps
+      kind: StatefulSet
