@@ -5,9 +5,11 @@ resources:
   - ../../base
 images:
   - name: peabsmart/backend
-    newTag: v2
+    newName: ghcr.io/donhadley22/peabsmart-backend
+    newTag: b7e85890b88217973d52eec86e2b160f251c5b21
   - name: peabsmart/frontend
-    newTag: v1
+    newName: ghcr.io/donhadley22/peabsmart-frontend
+    newTag: b7e85890b88217973d52eec86e2b160f251c5b21
 replicas:
   - name: backend
     count: 2
