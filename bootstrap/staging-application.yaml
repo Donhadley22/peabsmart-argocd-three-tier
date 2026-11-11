@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: peabsmart-staging
+  namespace: argocd
+spec:
+  project: peabsmart-lab
+  source:
+    repoURL: https://github.com/Donhadley22/peabsmart-argocd-three-tier.git
+    targetRevision: main
+    path: gitops/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lab-staging
+  syncPolicy:
+    syncOptions:
+      - PruneLast=true
